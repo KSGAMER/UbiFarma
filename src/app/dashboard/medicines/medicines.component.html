@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-medicines-list></app-medicines-list>
+  </div>
+  <div class="col-md-7">
+    <app-medicines-detail [medicine]="medicineSelected" *ngIf="medicineSelected; else infoText"></app-medicines-detail>
+    <ng-template #infoText>
+      <p>¡Seleccione un medicamento!</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+html, body{
+    overflow: hidden;
+    height: 100%;
+}
+
+body{
+    background: white;
+    padding: 0;
+    margin: 0;
+    font-family: tahoma;
+    
+}

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-success">
+      Nuevo Medicamento
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-medicines-tems *ngFor="let medicineEle of medicines" [medicine]="medicineEle"></app-medicines-tems>
+    </div>
+  </div>
+</div>

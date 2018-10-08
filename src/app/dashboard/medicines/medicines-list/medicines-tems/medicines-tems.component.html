@@ -1,0 +1,9 @@
+<a href="#" class="list-group-item list group-item-action clearfix" (click)="onSelected()">
+  <div class="float-left col-md-6">
+    <h4>{{medicine.name}}</h4>
+    <p>{{medicine.description}}</p>
+  </div>
+  <span class="float-right col-md-6" style="width: 40%">
+    <img [src]="medicine.imagePath" alt="" class="img-fluid">
+  </span>
+</a>
