@@ -9,6 +9,7 @@ import { MedicinesComponent } from './dashboard/medicines/medicines.component';
 import { MedicinesDetailComponent } from './dashboard/medicines/medicines-detail/medicines-detail.component';
 import { MedicinesListComponent } from './dashboard/medicines/medicines-list/medicines-list.component';
 import { MedicinesTemsComponent } from './dashboard/medicines/medicines-list/medicines-tems/medicines-tems.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MedicinesTemsComponent } from './dashboard/medicines/medicines-list/med
     MedicinesComponent,
     MedicinesDetailComponent,
     MedicinesListComponent,
-    MedicinesTemsComponent
+    MedicinesTemsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule
