@@ -1,0 +1,110 @@
+.menu{
+    background-color: white;
+}
+.menu h1{
+    font-size: 30px;
+    float: left;
+    margin: 1%;
+    font-weight: bold;
+    color: #0056b3;
+}
+.menu ul{
+    margin: 1% 0;
+    padding: 0;
+    display: flex;
+    float: right;
+}
+.menu ul li{
+    list-style: none;
+    padding: 10px 30px;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    font-weight: bold;
+}
+.menu ul li a:before{
+    content: '';
+    width: 00px;
+    height: 3px;
+    background: #00bcd4;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+.menu ul li a:after{
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #f0f;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+.menu ul li:hover a:before{
+    width: 50%;
+    transform: translateX(100%);
+}
+.menu ul li:hover a:after{
+    width: 50%;
+    transform: translateX(-100%);
+}
+a.inicio{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: 2.6%;
+    left: 60%;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+    font-weight: bold;
+    float: right;
+}
+a.inicio:hover{
+    animation: animate 8s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+a.inicio:before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+a.inicio:hover:before{
+    filter: blur(10px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+.clear{
+    clear: both;
+}
