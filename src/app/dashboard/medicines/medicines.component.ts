@@ -1,23 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Medicine } from './medicines.model';
 import { MedicineService } from '../services/medicine.service';
+import { Subscription } from 'rxjs';
+import { Medicine } from '../shared/medicine';
+import { PharmacyService } from '../services/pharmacy.service';
+import { Pharmacy } from '../shared/pharmacy';
 
 @Component({
   selector: 'app-medicines',
   templateUrl: './medicines.component.html',
   styleUrls: ['./medicines.component.css'],
-  providers: [MedicineService]
+  providers: [MedicineService, PharmacyService]
 })
 export class MedicinesComponent implements OnInit {
-  medicineSelected: Medicine;
-  constructor(private medicineService: MedicineService) { }
+  private subscription: Subscription;
+  medicines: Medicine[];
+  pharmacys: Pharmacy[];
+  constructor(private medicineService: MedicineService, private pharmacyService: PharmacyService) { }
 
   ngOnInit() {
-    this.medicineService.medicineSelected.subscribe(
-      (medicine: Medicine) => {
-        this.medicineSelected = medicine;
-      }
-    );
+    this.pharmacys = this.pharmacyService.getPharmacys();
+    this.medicines = this.medicineService.getMedicines();
+    this.subscription = this.medicineService.medicineUpdate.subscribe((medicines: Medicine[]) => {
+      this.medicines = medicines;
+    });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  onEditItem(index: number) {
+    this.medicineService.startedEditing.next(index);
+  }
 }

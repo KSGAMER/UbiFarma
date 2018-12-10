@@ -1,12 +1,116 @@
 <div class="row">
-  <div class="col-md-12">
-    <button class="btn btn-success">
-      Nuevo Medicamento
-    </button>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <app-medicines-tems *ngFor="let medicineEle of medicines" [medicine]="medicineEle"></app-medicines-tems>
+    <div class="col-12">
+        <!-- <div class="row"> -->
+        <!-- <form style="width: 100%;">
+                <div class="row">
+                    <div class="col-10 form-group">
+                        <label for="buscar">Buscar</label>
+                        <input type="text" id="buscar" class="form-control" name="buscar">
+                    </div>
+                    <div class="col-2" style="margin-top: 3.5%;">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </div>
+                </div>
+            </form>
+            <hr style="width: 100%;">
+            <form #f="ngForm" (ngSubmit)="onAddItem(f)" style="width: 100%; padding-top: 2%;">
+                <div class="row">
+                    <div class="col-8 form-group">
+                        <label for="nombre">Medicamento</label>
+                        <input type="text" pattern="^[A-Za-z]+$" id="nombre" class="form-control" name="nombre"
+                            required ngModel>
+                    </div>
+                    <div class="col-2 form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" pattern="^[0-9]+$" id="stock" name="stock" class="form-control" required
+                            ngModel>
+                    </div>
+                    <div class="col-8 form-group">
+                        <label for="presentacion">Presentación</label>
+                        <input type="text" pattern="^[A-Za-z]+$" id="presentacion" class="form-control" name="presentacion"
+                            required ngModel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button style="margin-left: 5px;" class="btn btn-success" type="submit" [disabled]="!f.valid">{{edithMode
+                            ? 'Actualizar': 'Agregar'}}</button>
+                        <button style="margin-left: 5px;" class="btn btn-danger" type="button" [disabled]="!f.valid"
+                            (click)="onDelete()">Eliminar</button>
+                        <button style="margin-left: 5px;" class="btn btn-primary" type="button" (click)="onClear()">Limpiar</button>
+                    </div>
+                </div>
+            </form> -->
+        <!-- </div> -->
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <h4 class="text-center">Ingrese los datos del medicamentos</h4>
+                            <br>
+                            <div class="row">
+                                <div class="col-3 text-right" style="margin: 1%;">
+                                    <label for="SKU">SKU:</label>
+                                </div>
+                                <div class="col-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <div class="row">
+                                <div class="col-3 text-right" style="margin: 1%;">
+                                    <label for="Nombre">Nombre:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <div class="row">
+                                <div class="col-3 text-right" style="margin: 1%;">
+                                    <label for="Presentacion">Presentación:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <div class="row">
+                                <div class="col-3 text-right" style="margin: 1%;">
+                                    <label for="Stock">Stock:</label>
+                                </div>
+                                <div class="col-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-4">
+                                    <a class="btn btn-success text-white btn-block">Agregar</a>
+                                </div>
+                                <div class="col-4">
+                                    <a class="btn btn-danger text-white btn-block">Cancelar</a>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
