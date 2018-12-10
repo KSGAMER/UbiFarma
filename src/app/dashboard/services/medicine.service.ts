@@ -1,16 +1,52 @@
-import { Medicine } from '../medicines/medicines.model';
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Medicine } from '../shared/medicine';
 
 export class MedicineService {
-    medicineSelected = new EventEmitter<Medicine>();
+    medicineUpdate = new Subject<Medicine[]>();
+    startedEditing = new Subject<number>();
 
-    medicines: Medicine[] = [
-        new Medicine('Paracetamol', 'Sirve como regulador de la temperatura y desinflamatorio', 'http://www.fahorro.com/media/catalog/product/cache/1/image/1280x1280/9df78eab33525d08d6e5fb8d27136e95/7/5/7502223706712.JPG'),
-        new Medicine('Ampicilina', 'Sirve para tratar infecciones y algunos virus', 'http://www.fahorro.com/media/catalog/product/cache/1/image/1280x1280/9df78eab33525d08d6e5fb8d27136e95/7/5/7503006569531.JPG'),
-        new Medicine('Ibuprofeno', 'Sirve como desinflamatorio', 'data:image/jpeg;base64,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')
+    private medicines: Medicine[] = [
+        new Medicine(1, 'paracetamol', 'Tabletas', 14),
+        new Medicine(2, 'ambroxol', 'Liquido', 7),
+        new Medicine(3, 'aspirina', 'Pastillas', 20),
+        new Medicine(4, 'diclofenaco', 'Pastillas', 2),
+        new Medicine(5, 'ampicilina', 'Tabletas', 26),
+        new Medicine(6, 'metformina', 'Tabletas', 35),
+        new Medicine(7, 'XL3', 'Capsulas', 87),
+        new Medicine(8, 'aspirina', 'Pastillas', 12)
     ];
 
     getMedicines() {
         return this.medicines.slice();
+    }
+
+    getMedicine(index: number) {
+        return this.medicines[index];
+    }
+
+    updateMedicine(index: number, medicine: Medicine) {
+        this.medicines[index] = medicine;
+        this.medicineUpdate.next(this.medicines.slice());
+    }
+
+    addMedicine(medicine: Medicine) {
+        this.medicines.push(medicine);
+        this.medicineUpdate.next(this.medicines.slice());
+    }
+
+    addMedicines(auxMedicines: Medicine[]) {
+        for(const i of auxMedicines) {
+            if(this.medicines.find(variable => variable.nombre == i.nombre)) {
+                this.medicines.find(variable => variable.nombre == i.nombre).stock = this.medicines.find(variable => variable.nombre == i.nombre).stock + i.stock;
+            }else{
+                this.medicines.push(i);
+            }
+        }
+        this.medicineUpdate.next(this.medicines.slice());
+    }
+
+    deleteMedicine(index: number) {
+        this.medicines.splice(index, 1);
+        this.medicineUpdate.next(this.medicines.slice());
     }
 }

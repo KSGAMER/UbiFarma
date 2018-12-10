@@ -7,15 +7,16 @@
   </label>
   <div id="sidebarMenu">
     <div class="perfil">
-      <img src="..//..//..//assets/icons8_Male_User_100px.png" alt="">
+      <img src="https://ganapromo.com/wp-content/uploads/2016/10/farmacias-del-ahorro.png" alt="">
       <p class="distinto">KalioPacheco</p>
       <p id="Usuario">Farmacia del Ahorro</p>
     </div>
     <ul class="sidebarMenuInner">
-      <li>WebSite<span>UbiFarma</span></li>
-      <li><a href="#"><span>Dashboard</span></a></li>
-      <li><a href="#" (click)="onSelect(medicine)"><span>Medicamentos</span></a></li>
-      <li><a href="#"><span>Graficas</span></a></li>
-      <li><a href="#"><span>Perfil</span></a></li>
+        <li style="cursor: pointer;" (click)="onMedicamentos()"><a><span>Medicamentos</span></a></li>
+      <!-- <li style="cursor: pointer;" (click)="onEspecialista()"><span>Especialistas</span></li> -->
+      <li style="cursor: pointer;" (click)="onChat()"><a><span>Chat</span></a></li>
+      <li style="cursor: pointer;" (click)="onEstadisticas()"><a><span>Estadisticas</span></a></li>
+      <!-- <li style="cursor: pointer;" (click)="onPerfil()"><a><span>Perfil</span></a></li> -->
+      <li style="cursor: pointer;" routerLink="/login"><a><span>Cerrar Sesión</span></a></li>
     </ul>
   </div>

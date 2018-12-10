@@ -4,3 +4,7 @@
     height: 30px;
     margin: 2%;
 }
+.contenedor{
+    overflow: hidden;
+    height: 100%;;
+}

@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyApCez9fOj7PFoo16SVZh52lJPXiNeVbug",
+    authDomain: "ubifarma.firebaseapp.com",
+    databaseURL: "https://ubifarma.firebaseio.com",
+    storageBucket: "ubifarma.appspot.com",
+    messagingSenderId: "419525672"
+  }
 };
 
 /*

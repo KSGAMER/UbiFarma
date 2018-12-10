@@ -1,11 +1,104 @@
-<div class="row">
-  <div class="col-md-5">
-    <app-medicines-list></app-medicines-list>
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-sm table-hover text-center">
+            <tbody>
+              <tr class="bg-dark text-white">
+                <td>Clave</td>
+                <td>Sucursal</td>
+                <td>Dirección</td>
+                <td>Ubicación</td>
+                <td>Opciones</td>
+              </tr>
+              <tr *ngFor="let pharmacy of pharmacys;">
+                <td>{{pharmacy.clave}}</td>
+                <td>{{pharmacy.nombre}}</td>
+                <td>{{pharmacy.direccion}}</td>
+                <td>{{pharmacy.ubicacion}}</td>
+                <td>
+                    <a class="btn btn-primary text-white" style="margin-right: 1%">Editar</a>
+                    <a class="btn btn-danger text-white" style="margin-left: 1%">Eliminar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <app-pharmacy-list></app-pharmacy-list>
+    </div>
   </div>
-  <div class="col-md-7">
-    <app-medicines-detail [medicine]="medicineSelected" *ngIf="medicineSelected; else infoText"></app-medicines-detail>
-    <ng-template #infoText>
-      <p>¡Seleccione un medicamento!</p>
-    </ng-template>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+      <div class="col-md-12" style="width: 100%;">
+          <div class="row">
+            <!-- <div class="list-group">
+                  <a style="cursor: pointer; z-index: 0;" *ngFor="let medicine of medicines; let i = index" class="list-group-item"
+                    (click)="onEditItem(i)">
+                    {{medicine.nombre}} {{medicine.presentacion}} ({{medicine.stock}})
+                  </a>
+                </div>
+                <hr>
+                <div class="col-9">
+                  <app-medicines-list></app-medicines-list>
+                </div> -->
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-10 form-group">
+                            <input type="text" placeholder="Ingresa un medicamento a Buscar" class="form-control">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-2">
+                              <a class="btn btn-success text-white">Buscar</a>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-sm table-hover text-center">
+                    <tbody>
+                      <tr class="bg-dark text-white">
+                        <td>SKU</td>
+                        <td>Medicamento</td>
+                        <td>Presentación</td>
+                        <td>Stock</td>
+                        <td>Opciones</td>
+                      </tr>
+                      <tr *ngFor="let medicine of medicines; let i = index;">
+                        <td>{{medicine.SKU}}</td>
+                        <td>{{medicine.nombre}}</td>
+                        <td>{{medicine.presentacion}}</td>
+                        <td>{{medicine.stock}}</td>
+                        <td>
+                          <a class="btn btn-primary text-white" style="margin-right: 1%">Editar</a>
+                          <a class="btn btn-danger text-white" style="margin-left: 1%">Eliminar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+                <app-medicines-list></app-medicines-list>
+              </div>
+          </div>
+        </div>
   </div>
 </div>
