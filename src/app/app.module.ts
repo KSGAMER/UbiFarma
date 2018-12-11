@@ -3,32 +3,38 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
+// Animaciones
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule} from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeaderComponent } from './dashboard/header/header.component';
-import { MedicinesComponent } from './dashboard/medicines/medicines.component';
-import { MedicinesListComponent } from './dashboard/medicines/medicines-list/medicines-list.component';
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './home/menu/menu.component';
-import { LoadingComponent } from './loading/loading.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { AppRoutingModule } from './app-routing.module';
-import { InicioComponent } from './dashboard/inicio/inicio.component';
-import { StadisticsComponent } from './dashboard/stadistics/stadistics.component';
-import { ProfileComponent } from './dashboard/profile/profile.component';
-import { ChatComponent } from './dashboard/chat/chat.component';
-import { CircleComponent } from './dashboard/stadistics/circle/circle.component';
-import { LinesComponent } from './dashboard/stadistics/lines/lines.component';
-import { WallsComponent } from './dashboard/stadistics/walls/walls.component';
+import { HeaderComponent } from './components/dashboard/header/header.component';
+import { MedicinesComponent } from './components/dashboard/medicines/medicines.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { ChatComponent } from './components/dashboard/chat/chat.component';
+import { StadisticsComponent } from './components/dashboard/stadistics/stadistics.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { LocalListComponent } from './components/dashboard/medicines/local-list/local-list.component';
+import { LocalComponent } from './components/dashboard/medicines/local/local.component';
+import { MedicineComponent } from './components/dashboard/medicines/medicine/medicine.component';
+import { MedicineListComponent } from './components/dashboard/medicines/medicine-list/medicine-list.component';
 
-//Firebase
-import { AngularFireModule } from 'angularfire2';
+// Firebase
+import { AngularFireModule }  from 'angularfire2';
+import { environment }  from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
-//Service
-import { FirebaseService } from './dashboard/services/firebase.service';
-import { PharmacyListComponent } from './dashboard/medicines/pharmacy-list/pharmacy-list.component';
+// Service
+import { MedicineService } from './services/medicine.service';
+import { AuthorizationService } from './services/authorization.service';
+import { LocalService } from './services/local.service';
+import { CircleComponent } from './components/dashboard/stadistics/circle/circle.component';
+import { WallsComponent } from './components/dashboard/stadistics/walls/walls.component';
+import { LinesComponent } from './components/dashboard/stadistics/lines/lines.component';
 
 @NgModule({
   declarations: [
@@ -37,18 +43,17 @@ import { PharmacyListComponent } from './dashboard/medicines/pharmacy-list/pharm
     DashboardComponent,
     HeaderComponent,
     MedicinesComponent,
-    MedicinesListComponent,
-    HomeComponent,
-    MenuComponent,
     LoadingComponent,
-    InicioComponent,
+    ChatComponent,
     StadisticsComponent,
     ProfileComponent,
-    ChatComponent,
+    LocalListComponent,
+    LocalComponent,
+    MedicineComponent,
+    MedicineListComponent,
     CircleComponent,
-    LinesComponent,
     WallsComponent,
-    PharmacyListComponent
+    LinesComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,10 +61,15 @@ import { PharmacyListComponent } from './dashboard/medicines/pharmacy-list/pharm
     FormsModule,
     ChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
-    FirebaseService
+    AuthorizationService,
+    MedicineService,
+    LocalService,
   ],
   bootstrap: [AppComponent]
 })

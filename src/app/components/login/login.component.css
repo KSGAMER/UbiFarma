@@ -1,0 +1,77 @@
+section{
+    width: 100%;
+    height: 100vh;
+    background: url('..//../..//assets/medicina.jpg');
+    background-size: cover;
+}
+.contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 350px;
+    background: rgba(49, 79, 102, 0.7);
+}
+.contenedor .formulario, .contenedor .login{
+    position: relative;
+    width: 50%;
+    height: 350px;
+    float: left;
+    box-sizing: border-box;
+}
+.contenedor .login{
+    background: #fff;
+    height: 380px;
+    top: -15px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+.contenedor .login h1{
+    color: #262626;
+    text-align: center;
+}
+.contenedor .login input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+}
+.contenedor .login input:hover, .contenedor .login input:valid{
+    border: 2px solid #6eb1e6;
+}
+.contenedor .login input[type="submit"]{
+    color: #fff;
+    background: #6eb1e6;
+    font-size: 16px;
+    transition: 0.5s;
+    cursor: pointer;
+    font-weight: bold;
+}
+.contenedor .login input[type="submit"]:hover{
+    background: #568ab3;
+    border: 2px solid #568ab3;
+}
+.contenedor .login a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #314f66;
+}
+.contenedor .formulario{
+    padding: 40px 30px;
+    color: #fff;
+}
+.contenedor .formulario a{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #568ab3;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

@@ -5,11 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyApCez9fOj7PFoo16SVZh52lJPXiNeVbug",
-    authDomain: "ubifarma.firebaseapp.com",
-    databaseURL: "https://ubifarma.firebaseio.com",
-    storageBucket: "ubifarma.appspot.com",
-    messagingSenderId: "419525672"
+    apiKey: "AIzaSyA7qnvQCD11MMbcSzfcRTtKO5RCJdSd9GE",
+    authDomain: "ubifarma-74e61.firebaseapp.com",
+    databaseURL: "https://ubifarma-74e61.firebaseio.com",
+    projectId: "ubifarma-74e61",
+    storageBucket: "ubifarma-74e61.appspot.com",
+    messagingSenderId: "536443011625"
   }
 };
 

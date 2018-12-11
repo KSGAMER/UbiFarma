@@ -1,0 +1,79 @@
+<div class="card mt-2">
+  <div class="card-body">
+      <form #m="ngForm" (ngSubmit)="onSubmit(m)">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="medicineService.selectedMedicine.$key">
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <h6 class="text-center">Ingrese los datos del medicamento</h6>
+              <br>
+              <div class="col-md-12">
+                  <div class="row">
+                      <div class="col-md-3 text-right">
+                          <label for="Nombre">Nombre:</label>
+                        </div>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="medicineService.selectedMedicine.nombre" required>
+                        </div>
+                  </div>
+              </div>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 text-right">
+                    <label for="presentacion">Presentación:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" name="presentacion" #presentacion="ngModel" [(ngModel)]="medicineService.selectedMedicine.presentacion" required>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 text-right">
+                    <label for="Pastillero">Pastillero:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" name="pastillero" #pastillero="ngModel" [(ngModel)]="medicineService.selectedMedicine.pastillero" required>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 text-right">
+                    <label for="Stock">Stock:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="number" class="form-control" name="stock" #stock="ngModel" [(ngModel)]="medicineService.selectedMedicine.stock" requiered>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 text-right">
+                    <label for="Precio">Precio:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="number" class="form-control" name="precio" #precio="ngModel" [(ngModel)]="medicineService.selectedMedicine.precio" required>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <button class="btn btn-success text-white btn-block" type="submit" [disabled]="medicineService.selectedMedicine.nombre == null ||medicineService.selectedMedicine.nombre == '' ||  medicineService.selectedMedicine.presentacion == null || medicineService.selectedMedicine.presentacion == '' || medicineService.selectedMedicine.pastillero == null || medicineService.selectedMedicine.pastillero == '' || medicineService.selectedMedicine.precio == null || medicineService.selectedMedicine.precio == '' || medicineService.selectedMedicine.stock == null || medicineService.selectedMedicine.stock == ''"><i class="fas fa-plus-circle mr-1"></i>{{medicineService.selectedMedicine.$key ?  'Guardar' : 'Agregar'}}</button>
+                  </div>
+                  <div class="col-md-5">
+                    <button class="btn btn-danger text-white btn-block" type="reset" (click)="resetForm(m)"><i class="fas fa-sync-alt mr-1"></i>Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+  </div>
+</div>

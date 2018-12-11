@@ -1,0 +1,24 @@
+<div class="card mt-2">
+  <div class="card-body">
+    <h6 class="text-center">Lista de Sucursales</h6>
+  </div>
+  <table class="table table-sm table-hover">
+    <tbody>
+      <tr class="bg-dark text-center text-white">
+        <td>Nombre</td>
+        <td>Dirección</td>
+        <td>Ubicación</td>
+        <td>Opciones</td>
+      </tr>
+      <tr class="text-center" style="cursor: pointer;" *ngFor="let local of localList" (click)="onSucursal(local)">
+        <td>{{local.nombre}}</td>
+        <td>{{local.direccion}}</td>
+        <td>{{local.ubicacion}}</td>
+        <td>
+          <a class="btn btn-primary text-white mr-1" (click)="onEdit(local)"><i class="far fa-edit"></i></a>
+          <a class="btn btn-secondary text-white ml-1" (click)="onDelete(local.$key)"><i class="far fa-trash-alt"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

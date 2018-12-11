@@ -1,0 +1,28 @@
+<div class="card mt-2">
+  <div class="card-body">
+    <h6 class="text-center">Lista de Medicamentos</h6>
+  </div>
+  <table class="table table-sm table-hover">
+    <tbody>
+      <tr class="bg-dark text-center text-white">
+        <td>Nombre</td>
+        <td>Presentación</td>
+        <td>Pastillero</td>
+        <td>Precio</td>
+        <td>Stock</td>
+        <td>Opciones</td>
+      </tr>
+      <tr class="text-center" *ngFor="let medicine of medicineList">
+        <td>{{medicine.nombre}}</td>
+        <td>{{medicine.presentacion}}</td>
+        <td>{{medicine.pastillero}}</td>
+        <td>{{medicine.precio}}</td>
+        <td>{{medicine.stock}}</td>
+        <td>
+          <a class="btn btn-primary text-white mr-1" (click)="onEdit(medicine)"><i class="far fa-edit"></i></a>
+          <a class="btn btn-secondary text-white ml-1" (click)="onDelete(medicine.$key)"><i class="far fa-trash-alt"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

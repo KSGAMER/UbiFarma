@@ -1,0 +1,23 @@
+<div class="header">
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <div class="perfil">
+      <img src="https://ganapromo.com/wp-content/uploads/2016/10/farmacias-del-ahorro.png" alt="">
+      <p class="distinto">Bienvenido a UbiFarma</p>
+      <p id="Usuario" *ngIf="authService.user | async">{{ (authService.user | async)?.email }}</p>
+    </div>
+    <ul class="sidebarMenuInner">
+      <li style="cursor: pointer;" (click)="onMedicamentos()"><a><span>Medicamentos</span></a></li>
+      <!-- <li style="cursor: pointer;" (click)="onEspecialista()"><span>Especialistas</span></li> -->
+      <li style="cursor: pointer;" (click)="onChat()"><a><span>Chat</span></a></li>
+      <li style="cursor: pointer;" (click)="onEstadisticas()"><a><span>Estadisticas</span></a></li>
+      <!-- <li style="cursor: pointer;" (click)="onPerfil()"><a><span>Perfil</span></a></li> -->
+      <li style="cursor: pointer;" routerLink="/login" (click)="logOut()"><a><span>Cerrar Sesión</span></a></li>
+    </ul>
+  </div>
+</div>
