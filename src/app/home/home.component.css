@@ -52,7 +52,11 @@ section.seccion3{
     background-size: cover;
 }
 section.seccion3 .inicio{
+<<<<<<< HEAD
+    margin-top: 30%;
+=======
     margin-top: 35%;
+>>>>>>> 343cdcd7461cacaacca5364b25dd48927b753b0c
     margin-left: 44%;
     width: 50%;
     background: white;
@@ -163,6 +167,10 @@ section.seccion4{
 }
 .tarjeta .caja .img img{
     width: 100%;
+<<<<<<< HEAD
+    height: 100%;
+=======
+>>>>>>> 343cdcd7461cacaacca5364b25dd48927b753b0c
 }
 .tarjeta .caja h2{
     font-size: 20px;

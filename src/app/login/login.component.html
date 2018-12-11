@@ -1,20 +1,18 @@
-<div class="login">
-  <div class="titulo">
-    <h1>Bienvenido a UbiFarma</h1>
-  </div>
+<section>
   <div class="contenedor">
-    <div class="izquierda"></div>
-    <div class="derecha">
-      <div class="datos">
-        <form>
-          <p>Usuario:</p>
-          <input type="text" name="" placeholder="Farmacia">
-          <p>Contraseña:</p>
-          <input type="password" name="" placeholder="••••••••••••••">
-          <input type="submit" name="" value="Ingresar">
-          <a href="#">¿Olvidaste tu Contraseña?</a>
-        </form>
-      </div>
+    <div class="formulario">
+      <h2>¿Qué es UbiFarma?</h2>
+      <p>UbiFarma es una aplicación web en la cual podras subir la lista y precios de tus medicamentos, la cual esta enlazada a una aplicación movil con el fin de incrementar las ganancias de tu negocio.</p>
+      <a style="cursor: pointer;" routerLink="/home">Leer más</a>
+    </div>
+    <div class="login">
+      <h1>Sign In</h1>
+      <form #f="ngForm">
+        <input type="text" id="email" name="email" required="" placeholder="Usuario" required ngModel>
+        <input type="password" id="password" name="password" required="" placeholder="Contraseña" required ngModel>
+        <input type="submit" value="Login" (click)="onSign(f)">
+      </form>
+      <a href="#">¿Olvidaste tu Contraseña?</a>
     </div>
   </div>
-</div>
+</section>
